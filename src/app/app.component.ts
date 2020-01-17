@@ -94,4 +94,5 @@ export class AppComponent {
     console.log('le hemos clickeado');
     this.pSeleccionado = producto;
   };
+  
 }
