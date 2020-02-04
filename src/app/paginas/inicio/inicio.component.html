@@ -1,1 +1,21 @@
-<h1>inicio works</h1>
+<h1>{{titulo}}</h1>
+
+<button (click)="contarClicks()">DALE</button>
+<p>{{numeroClicks}}</p>
+
+<p>Ejemplo de propiedad siempre con [] y las variables sin llaves</p>
+<p>La propiedad <code>hidden</code> es de Angular, tambien podriamos haber usado ngi </p>
+
+<button (click)="decirAdios()">Decir adiós</button>
+<p [hidden]="!visible">Adiós</p>
+
+<p>Ejemplo de que podemos declarar las propiedades al vuelo, sin tener que definirlas en el componente</p>
+<div [class]="claseSeleccionada">COLOR QUE CAMBIA AL PULSAR BOTONES</div>
+
+<button (click)="claseSeleccionada='verde'">Color verde</button>
+<button (click)="claseSeleccionada='rojo'">Color rojo</button>
+<button (click)="claseSeleccionada='azul'">Color azul</button>
+
+<p>Para usar el banana in a Box recordar importar el modulo de <code>FormsModule</code></p>
+<label>Nombre: {{jugador}}</label>
+<input type="text" [(ngModel)]="jugador";
