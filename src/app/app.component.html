@@ -1,36 +1,8 @@
 <h1>{{title}}</h1>
 
-<app-boton></app-boton>
+<app-navbar></app-navbar>
+<main class="container pt-2">
 
-<div class="row">
-    <!-- listado -->
-    <ul class="list-group">
-        <li *ngFor="let p of productos"
-            (click)="seleccionarProducto(p)"
-            class="list-group-item {{(p==pSeleccionado ? 'active' : '')}}">
-           {{p.id}}. <b>{{p.nombre}}</b> - {{p.precio}}€ - {{p.categoria.nombre}}</li>
-      </ul>
-      <!-- detalle -->
-    <div class="col">
-        <div class="col-lg-5 mb-10">
-            <div class="card h-100">
-              <img class="card-img-top" src="{{pSeleccionado.imagen}}" alt="">
-              <div class="card-body">
-                <h4 class="card-title">{{pSeleccionado.nombre}} - {{pSeleccionado.precio}}€</h4>
-                <h5 class="card-title">{{pSeleccionado.categoria.nombre}}</h5>
-                <div *ngIf="pSeleccionado.glutten" class="badge badge-pill badge-sucess"><i class="iconogluten fas fa-exclamation-circle"> Contiene gluten</i></div>
-                
-              </div>
-              <div class="card-footer">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        {{pSeleccionado.historico[0].fecha}} - <b>{{pSeleccionado.historico[0].precio}}€</b></li>
-                    <li class="list-group-item">
-                        {{pSeleccionado.historico[1].fecha}} - <b>{{pSeleccionado.historico[1].precio}}€</b></li>
-                    <li class="list-group-item">
-                        {{pSeleccionado.historico[2].fecha}} - <b>{{pSeleccionado.historico[2].precio}}€</b></li>
-                  </ul>       
-              </div>
-            </div>             
-    </div>
-</div>
+    <!-- componente para la navegacion dinamica entre las paginas -->
+    <router-outlet></router-outlet>
+</main>

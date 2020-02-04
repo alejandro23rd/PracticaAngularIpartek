@@ -1,0 +1,19 @@
+<h1>arrays works</h1>
+
+<div class="row">
+  <div class="col">
+    <pre>
+            {{frutas | json}}
+        </pre>
+  </div>
+  <div class="col">
+    <p>Precio total: <b>{{total}}</b></p>
+    <p>Precio total con descuento: <b>{{totaldescuento| json}}</b></p>
+    <p>Lista Solo de nombre de frutas: <b>{{aSoloNombres| json}}</b></p>
+    <p>Lista Solo de nombre de frutas con descuento mayor a 0: <b>{{frutasConDescuento| json}}</b></p>
+    <p>Frutas solo de color amarillo: <b>{{frutasSoloAmarillas| json}}</b></p>
+    <p>Precio total de las frutas amarillas: <b>{{totalSoloAmarillas| json}}</b></p>
+    <p>Buscar la primera fruta verde: <b>{{primeraFrutaVerde| json}}</b></p>
+    <p>Arrays de todos los colores que tienen todas las frutas: <b>{{colores| json}}</b></p>
+  </div>
+</div>

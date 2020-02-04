@@ -1,0 +1,23 @@
+<div class="alert alert-success" role="alert">
+  {{mensaje}}
+</div>
+
+<div class="row">
+  <div class="card" style="width: 18rem;">
+    <img src="{{pokemon.imagen}}" class="card-img-top" alt="imagen pokemon">
+    <div class="card-body">
+      <h5 class="card-title">{{pokemon.id}} - {{pokemon.nombre}}</h5>
+      <h5>Habiliades</h5>
+      <li *ngFor="let h of pokemon.habilidades">{{h}}</li>
+    </div>
+  </div>
+
+  <div class="col">
+    <p>Escribe un <b>ID</b> de un pokemon</p>
+    <input type="text" id="idProducto" placeholder="id">
+    <button id="boton">Consultar</button>
+
+    <p>Resultado:</p>
+    <textarea id="resultado" cols="30" rows="10"></textarea>
+  </div>
+</div>
