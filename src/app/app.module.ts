@@ -1,35 +1,48 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms’;
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { PruebaComponent } from './componentes/prueba/prueba.component';
+import { BotonComponent } from './componentes/boton/boton.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { InicioComponent } from './paginas/inicio/inicio.component';
+import { ProductosComponent } from './paginas/productos/productos.component';
+import { JuegoComponent } from './paginas/juego/juego.component';
 import { ArraysComponent } from './paginas/arrays/arrays.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PruebasComponent } from './component/pruebas/pruebas.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
-import { FormStyle } from '@angular/common';
 import { EstilosComponent } from './paginas/estilos/estilos.component';
+import { DirectivasComponent } from './paginas/directivas/directivas.component';
+import { FiltrosComponent } from './paginas/filtros/filtros.component';
+import { HelloDirective } from './directives/hello.directive';
+import { SubrayarDirective } from './directives/subrayar.directive';
+import { AnimalesPipe } from './pipes/animales.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
-    ArraysComponent,
+    PruebaComponent,
+    BotonComponent,
     NavbarComponent,
-    PruebasComponent,
+    InicioComponent,
+    ProductosComponent,
+    JuegoComponent,
+    ArraysComponent,
     PokemonRestComponent,
-    EstilosComponent
+    EstilosComponent,
+    DirectivasComponent,
+    FiltrosComponent,
+    HelloDirective,
+    SubrayarDirective,
+    AnimalesPipe
   ],
   imports: [
     BrowserModule,
-    HttpClientModule, //modulo para llamar por HTTP
-    AppRoutingModule,
-    FormsModule, //modulo para usar banana in a box y formularios
-
+    HttpClientModule, // Modulo para llamadas por HTTP
+    FormsModule,      // Modulo para usar Formularios
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

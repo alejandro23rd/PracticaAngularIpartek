@@ -1,21 +1,44 @@
-<h1>{{titulo}}</h1>
+<h2>{{titulo}}</h2>
 
-<button (click)="contarClicks()">DALE</button>
+<p>Ejemplo de expresiones 2 + 2 = {{2+2}}</p>
+
+<button (click)="contarClicks()" >DALE</button>
 <p>{{numeroClicks}}</p>
 
-<p>Ejemplo de propiedad siempre con [] y las variables sin llaves</p>
-<p>La propiedad <code>hidden</code> es de Angular, tambien podriamos haber usado ngi </p>
+<p>Ejempl de propiedad siempre con [] y las variables sin llaves</p>
+<p>La propiedad <code>hidden</code> es de Angular, tambiem podriamos haber usado <code>ngIf</code></p>
+<p [hidden]="!visible">
+    Adiós con propiedad hidden
+</p>
+
+<p *ngIf="visible">
+    Adiós con ngIf
+</p>
+
 
 <button (click)="decirAdios()">Decir adiós</button>
-<p [hidden]="!visible">Adiós</p>
 
-<p>Ejemplo de que podemos declarar las propiedades al vuelo, sin tener que definirlas en el componente</p>
-<div [class]="claseSeleccionada">COLOR QUE CAMBIA AL PULSAR BOTONES</div>
 
-<button (click)="claseSeleccionada='verde'">Color verde</button>
-<button (click)="claseSeleccionada='rojo'">Color rojo</button>
-<button (click)="claseSeleccionada='azul'">Color azul</button>
+<hr>
 
-<p>Para usar el banana in a Box recordar importar el modulo de <code>FormsModule</code></p>
-<label>Nombre: {{jugador}}</label>
-<input type="text" [(ngModel)]="jugador";
+<p>Podemos declarar propiedades al vuelo, sin tener que definirlas en el Componente, tambien podemos ejecutar eventos sin tener que definir una funcion</p>
+
+
+<div [class]="claseSeleccionada">COLOR que cambia al pulsar botones</div>
+<button (click)="claseSeleccionada='rojo otra'">Color verde</button>
+<button (click)="claseSeleccionada='verde'">Color rojo</button>
+
+
+<p>Para usar banana in a box recordar importar el modulo de <code>FormsModule</code></p>
+<label>Nombre: {{jugador}} </label>
+<br>
+<input type="text" [(ngModel)]="jugador" >
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

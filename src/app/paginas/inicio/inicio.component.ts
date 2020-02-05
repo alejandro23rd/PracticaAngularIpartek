@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-inicio',
@@ -9,42 +10,37 @@ export class InicioComponent implements OnInit {
 
   titulo: string;
   numeroClicks: number;
-  going: boolean;
   visible: boolean;
+  jugador: string;
 
-  constructor() {
-    this.titulo= 'WELCOME TO ANGULAR';
-    this.numeroClicks= 0;
-    this.going = false;
+  constructor( private pokemonService: PokemonService ) {
+    console.trace('InicioComponent constructor');
+    this.titulo = 'Weelcome 2 Hell';
+    this.numeroClicks = 0;
     this.visible = false;
-    
-  }
+    this.jugador = '';
+
+  }// constructor
 
   ngOnInit() {
+    console.trace('InicioComponent ngOnInit');
 
-  } //ngOnInit()
+  }// ngOnInit
 
-  contarClicks(){
-    console.trace('numeroClicks');
-    if(this.going == false){
-      this.numeroClicks++;
-      if(this.numeroClicks > 10 ){
-        this.going = true;
-      }
-    }
 
-    if(this.going == true){
-      this.numeroClicks--;
-      if(this.numeroClicks < 1 ){
-        this.going = false;
-      }
-    }
-  } //contarClicks()
+  contarClicks() {
+    console.trace('contarClicks ' + this.jugador);
+    this.numeroClicks++;
 
-  decirAdios(){
-    console.trace('visible');
+  }// contarClicks
+
+
+
+  decirAdios() {
+    console.trace('decirAdios');
     this.visible = true;
-  }//decirAdios()
+
+  }// decirAdios
 
 
 } // InicioComponent

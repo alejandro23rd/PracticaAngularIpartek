@@ -15,16 +15,18 @@ export class PokemonRestComponent implements OnInit {
   constructor( private pokemonService: PokemonService) {
 
     console.trace('PokemonRestComponent constructor');
-    this.pokemon = new Pokemon('pikachu');
-    this.mensaje = undefined;
+    this.mensaje = '';
+    this.pokemon = new Pokemon('');
    // this.pokemon.nombre = '';  // setter
     console.debug(this.pokemon);
+
   }
 
   ngOnInit() {
     console.trace('PokemonRestComponent ngOnInit');
 
-    //llamadas a los servicios
+    // llamadas a los servicios
+
     // a un Observable nos tenmos que suscribir
     // cuando llamamos a un Obervable tenemos 3 posibles metodos
     // solo 1 es obligatorio
@@ -49,6 +51,8 @@ export class PokemonRestComponent implements OnInit {
                 console.debug('recupera habiliada en castellano %o', habilidadCastellano);
                 this.pokemon.habilidades.push( habilidadCastellano.name );
             });
+
+
         });
 
         this.mensaje = 'Pokemon cargado desde https://pokeapi.co';
@@ -56,11 +60,15 @@ export class PokemonRestComponent implements OnInit {
       },
       error => {
         console.warn('peticion ERRONEA data %o', error);
-        this.mensaje="el pokemon no existe";
+        this.mensaje = 'No existe pokemon X';
       },
       () => {
         console.trace('esto se hace siempre');
       }
     );
+
+
+
   }
+
 }
