@@ -1,23 +1,29 @@
 import { Component } from '@angular/core';
+import { GLOBAL } from './global';
 
 
-/**
- * componente principal que se carga al arrancar la App
- * 
- * selector: nombre de la etiqueta para inyectar componente en HTML
- * templateUrl: Vista del HTML
- * styleUrls: estilos para la vista formato scss
- * 
- */
+// componenete principal que se carga al arrancar la app
+
+
+/*
+selector:   nombre de la etiqueta para inyectar el componente en HTML
+templateURL:  Vista del HTML
+styleUrls:  Estilo para la vista formato SCSS
+*/
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  // variables
+  globales : any
 
-  //variable
-  title = 'Angular App';
-  
+  constructor() {
+    this.globales = GLOBAL;
+  } // constructor
+
+
+
 
 }

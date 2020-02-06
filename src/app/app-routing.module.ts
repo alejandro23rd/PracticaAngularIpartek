@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ProductosComponent } from './paginas/productos/productos.component';
+import { RecetasComponent } from './paginas/recetas/recetas.component';
 import { JuegoComponent } from './paginas/juego/juego.component';
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { ArraysComponent } from './paginas/arrays/arrays.component';
@@ -17,6 +18,7 @@ import { FiltrosComponent } from './paginas/filtros/filtros.component';
 const routes: Routes = [
   { path: '',  component: InicioComponent},
   { path: 'productos', component: ProductosComponent },
+  { path: 'recetas', component: RecetasComponent },
   { path: 'juego', component: JuegoComponent },
   { path: 'pokemon', component: PokemonRestComponent },
   { path: 'arrays', component: ArraysComponent},

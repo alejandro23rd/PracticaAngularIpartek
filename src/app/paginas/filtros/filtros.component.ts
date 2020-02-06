@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ANIMALES } from '../../animales';
 
-
 @Component({
   selector: 'app-filtros',
   templateUrl: './filtros.component.html',

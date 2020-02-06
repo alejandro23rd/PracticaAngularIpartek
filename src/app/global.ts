@@ -1,5 +1,5 @@
 export const GLOBAL = {
-    'usuario' : 'Ander Uraga Real',
-    'github' : 'https://github.com/ipartek/java_2019_0396',
+    'usuario' : 'Alejandro Rodriguez Diaz',
+    'github' : 'https://github.com/github',
     'version' : '0.1'
 };
