@@ -19,6 +19,7 @@ import { FiltrosComponent } from './paginas/filtros/filtros.component';
 import { HelloDirective } from './directives/hello.directive';
 import { SubrayarDirective } from './directives/subrayar.directive';
 import { AnimalesPipe } from './pipes/animales.pipe';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AnimalesPipe } from './pipes/animales.pipe';
     FiltrosComponent,
     HelloDirective,
     SubrayarDirective,
-    AnimalesPipe
+    AnimalesPipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
