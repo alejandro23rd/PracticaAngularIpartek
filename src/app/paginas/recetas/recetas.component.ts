@@ -16,7 +16,7 @@ export class RecetasComponent implements OnInit {
   
   this.recetas = RECETAS;
   
-  this.recetaSeleccionada = '';
+  this.recetaSeleccionada = this.recetas[0];
   }// constructor
   
   seleccionarReceta = function (receta) {
