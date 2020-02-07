@@ -6,11 +6,6 @@ export const RUTAS =
         'icono' : 'class="fas fa-award"'
     },
     {
-        'ruta' : '/productos',
-        'nombre' : 'Producto',
-        'icono' : 'class="fab fa-affiliatetheme"'
-    },
-    {
         'ruta' : '/juego',
         'nombre' : 'Juego',
         'icono' : 'class="fas fa-award"'
@@ -39,5 +34,10 @@ export const RUTAS =
         'ruta' : '/filtros',
         'nombre' : 'filtros',
         'icono' : 'class="fas fa-award"'
-    }  
+    },
+    {
+        'ruta' : '/recetas',
+        'nombre' : 'Recetas',
+        'icono' : 'class="fas fa-award"'
+    }
 ];

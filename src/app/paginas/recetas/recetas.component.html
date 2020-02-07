@@ -2,11 +2,21 @@
 
 <!-- container -->
 <div class="container">
+
+    <div class="col">
+        Recetas Sin Gluten
+        <input type="checkbox" [(ngModel)]="checkGluten">
+        <div class="input-group">
+            <input type="search" [(ngModel)]="busqueda" class="form-control" placeholder="Busca receta por nombre, cocinero o ingredientes">
+            <div class="input-group-append"><span class="input-group-text"><span class="fas fa-search"></span></span></div>            
+        </div>
+    </div>
+
     <!-- listado -->
     <div class="row">    
         <div class="col-4">
             <ul class="list-group">
-                <li *ngFor="let r of recetas" (click)="seleccionarReceta(r)"
+                <li *ngFor="let r of recetas | recetaFiltro : checkGluten : busqueda" (click)="seleccionarReceta(r)"
                     class="list-group-item {{ (r==recetaSeleccionada) ? 'active' : ''  }}">
                     <b>{{r.nombre}}</b> {{r.cocinero}}
                     <span *ngIf="!r.isGlutenFree" class="badge badge-pill text-success"><i class="fas fa-cookie"></i></span>

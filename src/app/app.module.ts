@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { PruebaComponent } from './componentes/prueba/prueba.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { InicioComponent } from './paginas/inicio/inicio.component';
-import { ProductosComponent } from './paginas/productos/productos.component';
 import { JuegoComponent } from './paginas/juego/juego.component';
 import { ArraysComponent } from './paginas/arrays/arrays.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
@@ -20,6 +19,9 @@ import { SubrayarDirective } from './directives/subrayar.directive';
 import { AnimalesPipe } from './pipes/animales.pipe';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { RecetasComponent } from './paginas/recetas/recetas.component';
+import { RecetaFiltroPipe } from './pipes/receta.pipe';
+import { Error404Component } from './paginas/error404/error404.component';
+import { SaludarComponent } from './paginas/saludar/saludar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,6 @@ import { RecetasComponent } from './paginas/recetas/recetas.component';
     PruebaComponent,
     NavbarComponent,
     InicioComponent,
-    ProductosComponent,
     JuegoComponent,
     ArraysComponent,
     PokemonRestComponent,
@@ -38,7 +39,10 @@ import { RecetasComponent } from './paginas/recetas/recetas.component';
     SubrayarDirective,
     AnimalesPipe,
     FooterComponent,
-    RecetasComponent
+    RecetasComponent,
+    RecetaFiltroPipe,
+    Error404Component,
+    SaludarComponent
   ],
   imports: [
     BrowserModule,
