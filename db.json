@@ -1,4 +1,31 @@
 {
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Crear datos en Json",
+      "completada": true
+    },
+    {
+      "id": 2,
+      "titulo": "Crear modelo con interfaz",
+      "completada": true
+    },
+    {
+      "id": 3,
+      "titulo": "Tomar cafe y descanso a las 10:30",
+      "completada": false
+    },
+    {
+      "id": 4,
+      "titulo": "el eliminar mostrar al usuario ID y titulo de la tarea eliminada",
+      "completada": false
+    },
+    {
+      "id": 6,
+      "titulo": "¿que pasa si paramos json server?",
+      "completada": false
+    }
+  ],
   "productos": [
     {
       "id": 1,

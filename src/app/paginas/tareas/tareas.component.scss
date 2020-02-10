@@ -1,0 +1,59 @@
+li{
+
+    margin-top: 20px;
+    color: white;
+    list-style: none;
+    margin-top: 10px;
+
+    span.titulo{
+        font-weight: 500;
+    }
+
+    span.completada{
+        text-decoration: line-through;
+        font-weight: bold;
+        color: red;
+    }
+    
+    span.no_completada{
+        font-weight: bold;
+    }
+
+}
+.boton{
+    color: white;
+}
+
+.boton:hover{
+    color: red;
+}
+
+.box{
+    background-image: url("https://www.yorokobu.es/src/uploads/2016/10/likely-yorokobu-cabecera-1920x1080.jpg");
+    max-width: 1920px;
+    min-height: 500px;
+    padding-top: 100px;
+
+    .minibox{
+    
+        border-radius: 10px;
+        max-width: 750px;
+        max-height: 500px;
+        padding: 5px;
+        margin: auto;
+        background-color: #000000b8;
+    
+        h3{
+            color: white;
+            text-align: center;
+        }
+
+        .añadir{
+            text-align: center;
+        }
+    
+    }
+
+}
+
+
