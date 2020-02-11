@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +23,8 @@ import { RecetaFiltroPipe } from './pipes/receta.pipe';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
+import { PrivadoComponent } from './paginas/privado/privado.component';
+import { LoginComponent } from './paginas/login/login.component';
 
 @NgModule({
   declarations: [
@@ -44,12 +46,16 @@ import { TareasComponent } from './paginas/tareas/tareas.component';
     RecetaFiltroPipe,
     Error404Component,
     SaludarComponent,
-    TareasComponent
+    TareasComponent,
+    PrivadoComponent,
+    LoginComponent
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule, // Modulo para llamadas por HTTP
-    FormsModule,      // Modulo para usar Formularios
+    FormsModule,      // Modulo para usar Formularios con bananaInABox
+    ReactiveFormsModule, // Modulo para usar Formularios reactivos
     AppRoutingModule
   ],
   providers: [],

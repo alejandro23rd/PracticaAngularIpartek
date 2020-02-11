@@ -1,14 +1,6 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Tarea
-} from 'src/app/model/tarea';
-import {
-  TareasService
-} from 'src/app/services/tareas.service';
-import { stringify } from 'querystring';
+import { Component, OnInit } from '@angular/core';
+import { Tarea } from 'src/app/model/tarea';
+import { TareasService } from 'src/app/services/tareas.service';
 
 @Component({
   selector: 'app-tareas',
@@ -17,78 +9,118 @@ import { stringify } from 'querystring';
 })
 export class TareasComponent implements OnInit {
 
-  tareas: Array < Tarea > ;
+  tareas: Array<Tarea>;
   tituloNuevo: string;
+  modoEdicion: boolean;
 
-  constructor(private servicioTarea: TareasService) {
+  // mensajes
+  mensaje: string;
+  showMensaje: boolean;
+
+
+  constructor( private servicioTarea: TareasService ) {
     console.trace('TareasComponent constructor');
     this.tareas = []; // incializar el array
     this.tituloNuevo = '';
+    this.modoEdicion = false;
 
-  } // constructor
+    // mensaje
+    this.mensaje = '';
+    this.showMensaje = false;
+
+  }// constructor
 
   ngOnInit() {
     console.trace('TareasComponent ngOnInit');
+
     this.cargarTareas();
 
-  } // ngOnInit
+  }// ngOnInit
+
 
   editarEstado(tarea: Tarea) {
-    console.debug('click %o', tarea);
-
-    //hardcoreamos el cambio en el navegador (NO EN LA BASE DE DATOS COMO SE TENDRIA QUE HACER)
+    console.debug('click checkbox %o', tarea);
     tarea.completada = !tarea.completada;
 
-    this.servicioTarea.modificar(tarea).subscribe( data => this.cargarTareas);
-  } //editarEstado
+    this.servicioTarea.modificar(tarea).subscribe( () => this.cargarTareas() );
 
+
+  }// editarEstado
+
+
+  eliminar(tarea: Tarea) {
+    console.debug('click Eliminar %o', tarea);
+
+    if ( confirm('¿Estas seguro?') ) {
+      console.trace('Confirmado eliminacion');
+      this.servicioTarea.eliminar( tarea.id ).subscribe( () => {
+        this.mensaje = `Has eliminado la tarea con ID [${tarea.id}] con el titulo: ${tarea.titulo}`;
+        this.showMensaje = true;
+        this.cargarTareas();
+      });
+
+
+    } else {
+      console.trace('Cancelado eliminacion');
+    }
+
+  }// eliminar
+
+  nuevaTarea(): void {
+    console.debug('click nueva tarea %s', this.tituloNuevo );
+
+    // comprobar longitud > 1
+    if ( this.tituloNuevo.trim().length > 1 && this.tituloNuevo.length > 1 ) {
+
+        // crear objeto Tarea
+        const tNueva = new Tarea();
+        tNueva.titulo = this.tituloNuevo;
+        console.debug(tNueva);
+
+        this.servicioTarea.crear(tNueva).subscribe( data => {
+          console.debug('Nueva Tarea creada en json-server %o', data);
+          this.tituloNuevo = '';
+          this.cargarTareas();
+          this.mensaje = 'Tarea Creada con Exito!!!';
+          this.showMensaje = true;
+        });
+
+    } else {
+
+        this.mensaje = 'Por favor escribe uan tarea mas larga';
+        this.showMensaje = true;
+    }
+
+  }// nuevaTarea
+
+
+  /**
+   * Llama al Serviucio para cargar todas las tareas
+   * Nos va  aserivr para refrescar la lista
+   */
   private cargarTareas(): void {
-
     console.trace('cargarTareas');
 
     // llamar al service para obtener tareas
-    this.servicioTarea.listar().subscribe(datos => {
-      console.debug('esto se ejecuta de forma asincrona');
-      this.tareas = datos;
-    })
-
-  } //cargarTareas
-
-  eliminarTarea(tarea: Tarea){
-    console.debug('procedemos a eliminar una tarea');
-
-    if(confirm(`¿Desear eliminar la tarea con id: ${tarea.id} y titulo: ${tarea.titulo}`)){
-      console.debug('BAJA CONFIRMADA');
-      this.servicioTarea.eliminar(tarea.id).subscribe( () => this.cargarTareas());
-
-    } else{
-      alert('BAJA CANCELADA');
-    }
-
-  }//eliminarTarea
-
-  nuevaTarea(): void {
-    console.debug('procedemos a crear una nueva tarea', this.tituloNuevo);
-
-    //crear objeto Tarea
-
-    const tNuevo = new Tarea();
-    tNuevo.titulo = this.tituloNuevo;
-    
-    if(tNuevo.titulo == ""){
-      console.debug('El titulo esta vacio');
-      alert('El titulo esta vacio');
-
-    }else{
-      console.debug('tNuevo');
-
-      this.servicioTarea.crear(tNuevo).subscribe( ()=> {
-        this.cargarTareas()
-        this.tituloNuevo = '';
-      
+    this.servicioTarea.listar().subscribe(
+      datos => {
+        console.debug('esto se ejecuta de forma asincrona');
+        this.tareas = datos;
+      },
+      error => {
+        console.warn('Servico Rest no funciona %o', error);
+        this.mensaje = 'Servicio Rest No Funciona, posiblemente no lo hayas arrancado!!!';
+        this.showMensaje = true;
       });
-    }
 
-  }//nuevaTarea
+  }// cargarTareas
 
-} // TareasComponent
+
+  cambiarTitulo(tarea: Tarea): void {
+    console.debug('loose focus para cambiar titulo %o', tarea);
+    this.servicioTarea.modificar(tarea).subscribe( () => this.cargarTareas() );
+
+  }// cambiarTitulo
+
+
+}// TareasComponent

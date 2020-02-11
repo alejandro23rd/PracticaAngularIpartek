@@ -2,105 +2,70 @@
   "tareas": [
     {
       "id": 1,
-      "titulo": "Crear datos en Json",
-      "completada": true
+      "titulo": "Entenderlo, depurar haber si lo cambia",
+      "completada": false
     },
     {
       "id": 2,
-      "titulo": "Crear modelo con interfaz",
-      "completada": true
+      "titulo": "Mejorar UI, mostrando mensajesghjo",
+      "completada": false
     },
     {
       "id": 3,
-      "titulo": "Tomar cafe y descanso a las 10:30",
+      "titulo": "El eliminar mostrar al usuario ID y titulo de la tarea eliminada",
       "completada": false
     },
     {
       "id": 4,
-      "titulo": "el eliminar mostrar al usuario ID y titulo de la tarea eliminada",
+      "titulo": "Mejorar diseño si es necesario",
       "completada": false
     },
     {
-      "id": 6,
-      "titulo": "¿que pasa si paramos json server?",
+      "id": 5,
+      "titulo": "comprobar que titulo tarea nueva > 1",
       "completada": false
+    }
+  ],
+  "colores": [
+    {
+      "id": 1,
+      "nombre": "negro",
+      "hex": "#000"
+    },
+    {
+      "id": 2,
+      "nombre": "blanco",
+      "hex": "#FFF"
+    },
+    {
+      "id": 3,
+      "nombre": "azul",
+      "hex": "#00F"
+    },
+    {
+      "id": 4,
+      "nombre": "rojo",
+      "hex": "#F00"
+    },
+    {
+      "id": 5,
+      "nombre": "verde",
+      "hex": "#0F0"
+    },
+    {
+      "nombre": "teal",
+      "hex": "#00FFDD",
+      "id": 6
     }
   ],
   "productos": [
     {
       "id": 1,
-      "nombre": "Cafe",
-      "imagen": "https://www.medicinaortomolecular.com.mx/wp-content/uploads/2014/07/Cafe-500x325.jpg",
-      "glutten": false,
-      "precio": 1.4,
-      "categoria": {
-        "id": 1,
-        "nombre": "desayunos"
-      },
-      "historico": [
-        {
-          "fecha": "01/01/2020",
-          "precio": 1.45
-        },
-        {
-          "fecha": "01/01/2019",
-          "precio": 1.4
-        },
-        {
-          "fecha": "01/01/2018",
-          "precio": 1.35
-        }
-      ]
+      "nombre": "cafe"
     },
     {
       "id": 2,
-      "nombre": "Leche",
-      "imagen": "https://mejorconsalud.com/wp-content/uploads/2017/03/sufrimos-osteoporosis-bebemos-leche.jpg",
-      "glutten": false,
-      "precio": 2.4,
-      "categoria": {
-        "id": 2,
-        "nombre": "bebidas"
-      },
-      "historico": [
-        {
-          "fecha": "02/01/2020",
-          "precio": 2.45
-        },
-        {
-          "fecha": "01/01/2019",
-          "precio": 3.4
-        },
-        {
-          "fecha": "01/01/2018",
-          "precio": 4.35
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "nombre": "Galletas con gluten",
-      "imagen": "https://mejorconsalud.com/wp-content/uploads/2015/09/galletas-de-chocolate-blanco-500x325.jpg",
-      "glutten": true,
-      "precio": 5.4,
-      "categoria": {
-        "id": 1,
-        "nombre": "desayunos"
-      },
-      "historico": [
-        {
-          "fecha": "03/01/2020",
-          "precio": 3.1
-        },
-        {
-          "fecha": "01/01/2019",
-          "precio": 4.1
-        },
-        {
-          "fecha": "01/01/2018",
-          "precio": 5.1
-        }
-      ]
+      "nombre": "leche"
     }
   ],
   "posts": [
@@ -119,37 +84,5 @@
   ],
   "profile": {
     "name": "typicode"
-  },
-  "colores": [
-    {
-      "id": 1,
-      "nombre": "negro",
-      "hex": "#000000"
-    },
-    {
-      "id": 2,
-      "nombre": "blanco",
-      "hex": "#FFFFFF"
-    },
-    {
-      "id": 3,
-      "nombre": "azul",
-      "hex": "#0000FF"
-    },
-    {
-      "id": 4,
-      "nombre": "rojo",
-      "hex": "#FF0000"
-    },
-    {
-      "id": 5,
-      "nombre": "verde",
-      "hex": "#008000"
-    },
-    {
-      "nombre": "teal",
-      "hex": "#00FFDD",
-      "id": 6
-    }
-  ]
+  }
 }
