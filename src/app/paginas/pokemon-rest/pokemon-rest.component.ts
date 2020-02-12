@@ -66,9 +66,5 @@ export class PokemonRestComponent implements OnInit {
         console.trace('esto se hace siempre');
       }
     );
-
-
-
   }
-
 }

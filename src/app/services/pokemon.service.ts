@@ -26,6 +26,4 @@ export class PokemonService implements IPokemonService {
     console.trace('PokemonService getHabilidad ' + url);
     return this.http.get(url);
   }
-
-
 }

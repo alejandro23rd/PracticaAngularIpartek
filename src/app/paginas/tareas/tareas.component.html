@@ -11,7 +11,7 @@
            </button>
        </div>
    
-   
+        <!-- crear una nueva tarea -->
        <div class="container-tareas">
    
            <div class="crear">
@@ -19,7 +19,7 @@
                <button (click)="nuevaTarea()" class="btn btn-primary">Crear</button>
            </div>
    
-   
+        <!-- listar las tareas -->
            <ul>
                <li *ngFor="let tarea of tareas" (click)="modoEdicion = true">           
                         

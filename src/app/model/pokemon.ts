@@ -40,9 +40,4 @@ export class Pokemon {
     public set habilidades(value: Array<string>) {
         this._habilidades = value;
     }
-    
-    
-
-
-
 }
