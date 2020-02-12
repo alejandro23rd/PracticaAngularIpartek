@@ -8,7 +8,7 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class LoginGuard implements CanActivate{
 
-  constructor (private router: Router,private usuarioService: UsuarioService){
+  constructor (private router: Router, private usuarioService: UsuarioService){
     console.debug('LoginGuard constructor');
   }
 

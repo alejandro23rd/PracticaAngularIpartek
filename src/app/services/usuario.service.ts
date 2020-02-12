@@ -5,48 +5,59 @@ import { Usuario } from '../model/usuario';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService implements IUsuarioService{
-  
-  isLogged: boolean;
-  usuario: Usuario;
+export class UsuarioService implements IUsuarioService {
+
+  private isLogged: boolean;
+  private usuario: Usuario;
 
   constructor() {
-      this.isLogged = false;
-      this.usuario = undefined;
-  }//constructor
+    console.trace('UsuarioService constructor');
+    this.isLogged = false;
+    this.usuario = undefined;
+
+  }// constructor
+
+
 
   estaLogeado(): boolean {
+    console.trace('UsuarioService estaLogeado');
     return this.isLogged;
+  }
 
-  }//estaLogeado
-  
+  /**
+   * Busca el usuario por nombre y password
+   * @param nombre 
+   * @param password 
+   * @return Usuario con datos si existe, undefined si no encuentra
+   */
   login(nombre: string, password: string): Usuario {
-
+    console.trace('UsuarioService login nombre %s password %s', nombre, password);
     const NOMBRE = 'admin';
-    const PASS = 'admin';
-    let usuarioBuscar = undefined;
+    const PASS = 'admin123';
+    let usuarioBuscar: Usuario; // si no enta en el if es "undefined"
 
-    if(nombre===NOMBRE && password===PASS){
-
+    if ( NOMBRE === nombre && PASS === password ) {
       console.trace('usuario encontrado');
+      // crear usuario
       usuarioBuscar = new Usuario();
       usuarioBuscar.nombre = nombre;
       usuarioBuscar.password = password;
       usuarioBuscar.id = 99;
+      // marcar que esta logeado
+      this.isLogged = true;
 
-      //marcar que esta logeado
-      this.isLogged = true;
-    } else{
-      console.trace('error en el registro de usuario');
-      this.isLogged = true;
+    } else {
+      console.trace('usuario NO encontrado');
+      this.isLogged = false;
     }
-    return this.usuario;
 
-  }//login
+    return usuarioBuscar;
+  }// login
 
-  cerrarsesion(idUsuario: number) {
+  cerrarsesion() {
+    console.trace('UsuarioService cerrarSesion');
     this.isLogged = false;
+  }
 
-  }//cerrarsesion
 
-}
+}// UsuarioService
