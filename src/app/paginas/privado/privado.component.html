@@ -1,0 +1,11 @@
+<h1>ZONA BACKOFFICE</h1>
+<p>solamente podran acceder los usuarios que se hayan logeado</p>
+<p>para proteger el acceso a esta ruta debemos usar un guardar y definirla en routing</p>
+<code>  path: 'privado', component: PrivadoComponent, canActivate: [LoginGuard],</code>
+<dl>
+  <dt>canActivate</dt>
+  <dd>Guarda si se puede activar la ruta</dd>
+
+  <dt>LoginGuard</dt>
+  <dd>Guarda creada por nosotros que retornara true o false</dd>
+</dl>

@@ -1,16 +1,14 @@
-
-
 <div *ngIf="mensaje" class="alert alert-primary" role="alert">
-    {{mensaje}}
+  {{mensaje}}
 </div>
 
 <div class="card" style="width: 18rem;">
-    <img src="{{pokemon.imagen}}" class="card-img-top" alt="imagen pokemon">
-    <div class="card-body">
-      <h5 class="card-title">{{pokemon.id}} {{pokemon.nombre}}</h5>
-      <ol>
-        <h3>Habiliades</h3>
-        <li *ngFor="let h of pokemon.habilidades">{{h}}</li>
-      </ol>      
-    </div>
+  <img src="{{pokemon.imagen}}" class="card-img-top" alt="imagen pokemon">
+  <div class="card-body">
+    <h5 class="card-title">{{pokemon.id}} {{pokemon.nombre}}</h5>
+    <ol>
+      <h3>Habiliades</h3>
+      <li *ngFor="let h of pokemon.habilidades">{{h}}</li>
+    </ol>
   </div>
+</div>

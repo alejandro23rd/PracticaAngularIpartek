@@ -52,7 +52,7 @@ export class ArraysComponent implements OnInit {
     // this.frutas.forEach( el => this.total += el.precio );
 
     // modo extendido para poder depurar
-    this.total = this.frutas.map( el => {
+    this.total = this.frutas.map( el =>{
             console.debug( el );
             return el.precio;
         }).reduce( (previous, current, index, array) => {

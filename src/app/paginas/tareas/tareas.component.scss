@@ -1,0 +1,56 @@
+.container {    
+
+    background-image: url("https://cdn.elgrupoinformatico.com/Manuales/2015/06/fondo-de-pantalla-windows-10-no-oficial-1-290615.png");  
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 80vh;
+
+
+    .container-tareas {
+
+        width: 70vw;
+        margin: auto;
+        background-color: rgba(255,255,255,0.3);
+        padding: 20px;
+    
+        .crear {
+            display: flex;
+            margin-bottom: 1rem;       
+        }
+    
+        input[type="checkbox"] {
+            width: 30px;
+            height: 30px;
+        }    
+  
+        ul {
+
+            padding: 0;
+    
+            li {
+    
+                list-style: none;
+                display: flex;
+                margin-bottom: 10px;
+                    
+                input[type="text"] {
+                    flex-grow: 2;
+                    margin-right: 10px;
+                }
+            
+                input[type="text"].titulo{
+                    font-weight: 500;
+                    margin-left: 10px;
+                }
+            
+                input[type="text"].completada{
+                    text-decoration: line-through;
+                    font-weight: 100;
+                    color: rgb(119, 113, 113);
+                }         
+            } // li
+        } // ul   
+    } // container-tareas
+} // container
