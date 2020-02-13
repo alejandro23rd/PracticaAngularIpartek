@@ -33,6 +33,4 @@ export class RecetasComponent implements OnInit {
   console.log('RecetasComponent ngOnInit');
   }// ngOnInit
 
-  
-
 } //RecetasComponent
