@@ -38,6 +38,7 @@ import { AnimalesPipe } from './pipes/animales.pipe';
     SubrayarDirective,
     AnimalesPipe
   ],
+  
   imports: [
     BrowserModule,
     HttpClientModule, // Modulo para llamadas por HTTP
