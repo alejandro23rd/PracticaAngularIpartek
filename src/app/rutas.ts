@@ -35,5 +35,9 @@ export const RUTAS =
     {
         'ruta' : '/tareas',
         'nombre' : 'Tareas',
+    },
+    {
+        'ruta' : '/compras',
+        'nombre' : 'Compras',
     }
 ];

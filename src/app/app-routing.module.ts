@@ -15,6 +15,7 @@ import { TareasComponent } from './paginas/tareas/tareas.component';
 import { PrivadoComponent } from './paginas/privado/privado.component';
 import { LoginGuard } from './guards/login.guard';
 import { LoginComponent } from './paginas/login/login.component';
+import { ComprasComponent } from './paginas/compras/compras.component';
 
 /**
  * Definir las rutas la app de angular
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'filtros', component: FiltrosComponent},
   { path: 'tareas', component: TareasComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'compras', component: ComprasComponent},
 
   //pagina privada (BackOffice)
   { path: 'privado', component: PrivadoComponent, canActivate: [LoginGuard]},
