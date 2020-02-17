@@ -1,66 +1,45 @@
-<h1>Recetas: </h1>
+<div class="row mb-3">
 
-<!-- container -->
-<div class="container">
+    <div class="col">
+        <a href="#">Cocinar nueva Receta</a>
+    </div>
 
     <div class="col">
         Recetas Sin Gluten
         <input type="checkbox" [(ngModel)]="checkGluten">
         <div class="input-group">
             <input type="search" [(ngModel)]="busqueda" class="form-control" placeholder="Busca receta por nombre, cocinero o ingredientes">
-            <div class="input-group-append">
-                <span class="input-group-text">
-                <span class="fas fa-search"></span></span>
-            </div>            
+            <div class="input-group-append"><span class="input-group-text"><span class="fas fa-search"></span></span></div>            
+        </div>
+
+        <div class="p-2 bg-success">
+            {{checkGluten}}
+            <br>
+            {{busqueda}}
         </div>
     </div>
 
-    <!-- listado -->
-    <div class="row">    
-        <div class="col-4">
-            <ul class="list-group">
-                <li *ngFor="let r of recetas | recetaFiltro : checkGluten : busqueda" (click)="seleccionarReceta(r)"
-                    class="list-group-item {{ (r==recetaSeleccionada) ? 'active' : ''  }}">
-                    <b>{{r.nombre}}</b> {{r.cocinero}}
-                    <span *ngIf="!r.isGlutenFree" class="badge badge-pill text-success"><i class="fas fa-cookie"></i></span>
-                    <span *ngIf="r.isGlutenFree" class="badge badge-pill text-danger"><i class="fas fa-cookie"></i></span>
-                </li>
-            </ul>
-        </div>
-        <!-- listado -->
-    
-        <!-- detalle -->
-        <div class="detalle col-8">
-            <div class="title">{{recetaSeleccionada.nombre}}</div>
-            <div class="row">
-                <div class="col">
-                    <img class="fotoreceta" alt="imagen" src="{{recetaSeleccionada.foto}}">
-                    <div class="row">
-                        <div class="col -4">
-                            <i class="fas fa-heart text-danger"> {{recetaSeleccionada.likes}} </i>
-                        </div>
-                        <div class="col -8">
-                            <i>{{recetaSeleccionada.cocinero}}</i>
-                        </div>
-                    </div>
-    
-                </div>
-    
-                <div class="col">
-                    <ul class="list-group"> <b>INGREDIENTES:</b> 
-                        <li *ngFor="let i of recetaSeleccionada.ingredientes" class="list-group-item {{ (i==recetaSeleccionada.ingredientes) ? 'active' : ''  }}">
-                            {{i}}
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="descripcion">
-                 <b>Descripcion:</b>  {{recetaSeleccionada.descripcion}}
-            </div>
-        </div>
-        <!-- detalle -->
+</div>
+<!-- /1º row -->
+
+<div class="row">
+    <div class="col-4">
+        <ul class="list-group">
+            <li *ngFor="let receta of recetas | recetaFiltro : checkGluten : busqueda " 
+                (click)="recetaSeleccionada = receta"
+                class="list-group-item {{ (receta == recetaSeleccionada ) ? 'active': ''}}">{{receta.nombre}}</li>            
+          </ul>
     </div>
     <!-- listado -->
+    <div class="col-8">
+        <div class="card">
+            <img src="assets/images/receta.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              {{ recetaSeleccionada | json }}
+            </div>
+          </div>
+    </div>
+    <!-- detalle -->
 </div>
-<!-- container -->
+<!-- /2º row -->
 
