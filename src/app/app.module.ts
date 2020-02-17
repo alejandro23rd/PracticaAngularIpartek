@@ -57,6 +57,7 @@ import { DetalleComponent } from './paginas/compras/detalle/detalle.component';
     DetalleComponent
 
   ],
+  
   imports: [
     BrowserModule,
     HttpClientModule, // Modulo para llamadas por HTTP
